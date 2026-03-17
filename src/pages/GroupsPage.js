@@ -13,7 +13,6 @@ function GroupsPage() {
   const navigate = useNavigate();
 
   const userId = parseInt(localStorage.getItem('userId'));
-  const userName = localStorage.getItem('userName');
 
   useEffect(() => {
     loadGroups();
