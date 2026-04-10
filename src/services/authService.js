@@ -1,6 +1,8 @@
+
 import { API_URL } from '../config';
 
 const BASE_URL = `${API_URL}/api/auth`;
+
 export async function register({ email, name, password }) {
   const res = await fetch(`${BASE_URL}/register`, {
     method: 'POST',

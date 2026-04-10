@@ -6,6 +6,15 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' }
 });
 
+// 🔥 AGREGA ESTO AQUÍ
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 // USUARIOS
 export const getUsers = () => api.get('/api/users');
 export const createUser = (phone, name) => api.post('/api/users', { phone, name });
